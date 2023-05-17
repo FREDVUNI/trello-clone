@@ -10,9 +10,10 @@ export const AppContainer = styled.div`
   width: 100%;
 `;
 export const ColumnContainer = styled.div`
-  background-color: #3179ba;
+  background-color: #ebecf0;
   width: 300px;
   min-height: 40px;
+  margin-right: 20px;
   border-radius: 0px;
   padding: 8px 8px;
   flex-grow: 0;
