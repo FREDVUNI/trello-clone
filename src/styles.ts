@@ -22,7 +22,7 @@ export const ColumnContainer = styled.div`
   width: 300px;
   min-height: 40px;
   margin-right: 20px;
-  border-radius: 3px;
+  border-radius: 5px;
   padding: 8px;
   flex-grow: 0;
 
@@ -45,7 +45,7 @@ export const CardContainer = styled.div`
   margin-bottom: 0.5rem;
   padding: 0.5rem 1rem;
   max-width: 300px;
-  border-radius: 3px;
+  border-radius: 10px;
   box-shadow: #091e4240 0px 1px 0px 0px;
 
   @media (max-width: 768px) {
