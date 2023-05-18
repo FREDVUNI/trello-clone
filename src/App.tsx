@@ -6,12 +6,12 @@ import { FiSun, FiMoon } from 'react-icons/fi';
 
 export const App = () => {
   const {theme,toggleTheme} = useContext(ThemeContext);
-
+  
   return (
-    <AppContainer>
+    <AppContainer theme={theme}>
       <Column text="todo item list" />
       <ToggleButton onClick={toggleTheme}>
-        {theme === "light" ? <FiMoon /> : <FiSun />}
+        {theme === "light" ? <FiMoon className="icon" /> : <FiSun className="icon"/>}
       </ToggleButton>
     </AppContainer>
   );

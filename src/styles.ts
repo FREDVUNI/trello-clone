@@ -59,11 +59,17 @@ export const CardContainer = styled.div<AppContainerProps>`
     max-width: 100%;
   }
 `;
-export const ToggleButton = styled.button`
+export const ToggleButton = styled.button<AppContainerProps>`
   cursor: pointer;
   border: none;
   font-size: large;
   position: absolute;
   top: 10px;
   right: 10px;
+  background: none;
+
+  @media (max-width: 768px) {
+    right: 10px;
+    margin-bottom: 0px;
+  }
 `;

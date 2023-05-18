@@ -20,14 +20,8 @@ export const ThemeProvider = ({ children }: Props) => {
   const toggleTheme: ThemeContextType["toggleTheme"] = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
-
-  const themeContextValue: ThemeContextType = {
-    theme,
-    toggleTheme,
-  };
-
   return (
-    <ThemeContext.Provider value={themeContextValue}>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );
