@@ -1,9 +1,14 @@
 import styled from "styled-components";
 
-export const AppContainer = styled.div`
+type AppContainerProps = {
+  theme: "light" | "dark";
+};
+
+export const AppContainer = styled.div<AppContainerProps>`
   align-items: flex-start;
-  background-color: #212121;
-  color: #fff;
+  background-color: ${({ theme }) =>
+    theme === "dark" ? "#212121" : "#f5f5f5"};
+  color: ${({ theme }) => (theme === "dark" ? "#fff" : "#333")};
   display: flex;
   flex-direction: row;
   min-height: 100vh;
@@ -16,9 +21,10 @@ export const AppContainer = styled.div`
   }
 `;
 
-export const ColumnContainer = styled.div`
-  background-color: #2b2b2b;
-  color: #fff;
+export const ColumnContainer = styled.div<AppContainerProps>`
+  background-color: ${({ theme }) =>
+    theme === "dark" ? "#2b2b2b" : "#eaeaea"};
+  color: ${({ theme }) => (theme === "dark" ? "#fff" : "#333")};
   width: 300px;
   min-height: 40px;
   margin-right: 20px;
@@ -33,14 +39,15 @@ export const ColumnContainer = styled.div`
   }
 `;
 
-export const ColumnTitle = styled.div`
+export const ColumnTitle = styled.div<AppContainerProps>`
   padding: 6px 16px 12px;
   font-weight: bold;
 `;
 
-export const CardContainer = styled.div`
-  background-color: #363636;
-  color: #fff;
+export const CardContainer = styled.div<AppContainerProps>`
+  background-color: ${({ theme }) =>
+    theme === "dark" ? "#363636" : "#f0f0f0"};
+  color: ${({ theme }) => (theme === "dark" ? "#fff" : "#333")};
   cursor: pointer;
   margin-bottom: 0.5rem;
   padding: 0.5rem 1rem;
@@ -51,4 +58,12 @@ export const CardContainer = styled.div`
   @media (max-width: 768px) {
     max-width: 100%;
   }
+`;
+export const ToggleButton = styled.button`
+  cursor: pointer;
+  border: none;
+  font-size: large;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 `;
