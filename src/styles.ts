@@ -68,6 +68,11 @@ export const ToggleButton = styled.button<AppContainerProps>`
   right: 10px;
   background: none;
 
+  .icon {
+    color: ${({ theme }) => (theme === "dark" ? "#fff" : "#333")};
+    font-size: 25px;
+  }
+
   @media (max-width: 768px) {
     right: 10px;
     margin-bottom: 0px;
