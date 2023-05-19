@@ -3,7 +3,92 @@ import styled from "styled-components";
 type AppContainerProps = {
   theme: "light" | "dark";
 };
+export const NavbarContainer = styled.nav`
+  background-color: #026aa7;
+  color: #fff;
+  padding: 10px;
 
+  @media (max-width: 768px) {
+    padding: 10px 5px;
+  }
+`;
+
+export const NavbarWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+
+export const NavbarLogo = styled.div`
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  @media (max-width: 768px) {
+    margin-bottom: 10px;
+  }
+`;
+
+export const NavbarLinks = styled.ul<{ isOpen: boolean }>`
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    display: ${({ isOpen }: any) => (isOpen ? "flex" : "none")};
+  }
+`;
+
+export const NavbarLink = styled.li`
+  margin-right: 10px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 5px;
+  }
+`;
+
+export const TogglesButton = styled.div`
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+
+  span {
+    height: 3px;
+    width: 25px;
+    background-color: #fff;
+    margin-bottom: 4px;
+    border-radius: 2px;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    position: absolute;
+    top: 15px;
+    right: 50px;
+    margin-bottom: 0px;
+  }
+`;
 export const AppContainer = styled.div<AppContainerProps>`
   align-items: flex-start;
   background-color: ${({ theme }) =>
@@ -69,7 +154,7 @@ export const ToggleButton = styled.button<AppContainerProps>`
   background: none;
 
   .icon {
-    color: ${({ theme }) => (theme === "dark" ? "#fff" : "#333")};
+    color: #fff;
     font-size: 25px;
   }
 
