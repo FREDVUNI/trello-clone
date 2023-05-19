@@ -98,8 +98,9 @@ export const AppContainer = styled.div<AppContainerProps>`
   background-color: ${({ theme }) =>
     theme === "dark" ? "#212121" : "#f5f5f5"};
   color: ${({ theme }) => (theme === "dark" ? "#fff" : "#333")};
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 0px;
   min-height: 100vh;
   padding: 20px;
   width: 100%;
@@ -116,13 +117,15 @@ export const ColumnContainer = styled.div<AppContainerProps>`
     theme === "dark" ? "#2b2b2b" : "#eaeaea"};
   color: ${({ theme }) => (theme === "dark" ? "#fff" : "#333")};
   width: 300px;
-
   min-height: 40px;
   margin-right: 20px;
   border-radius: 5px;
   padding: 8px;
   flex-grow: 0;
   margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -130,7 +133,6 @@ export const ColumnContainer = styled.div<AppContainerProps>`
     margin-bottom: 0px;
   }
 `;
-
 export const ColumnTitle = styled.div<AppContainerProps>`
   padding: 6px 16px 12px;
   font-weight: bold;
@@ -146,6 +148,8 @@ export const CardContainer = styled.div<AppContainerProps>`
   max-width: 300px;
   border-radius: 10px;
   box-shadow: #091e4240 0px 1px 0px 0px;
+  width: 100%;
+  margin-bottom: 10px;
 
   @media (max-width: 768px) {
     max-width: 100%;

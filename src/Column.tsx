@@ -11,9 +11,9 @@ export const Column = ({ text }: Props) => {
   return (
     <ColumnContainer theme={theme}>
       <ColumnTitle>{text}</ColumnTitle>
-      <CardContainer  theme={theme}>Generate scaffolding</CardContainer>
-      <CardContainer  theme={theme}>Learn TypesScript</CardContainer>
-      <CardContainer  theme={theme}>Use static typing</CardContainer>
+      <CardContainer theme={theme}>Generate scaffolding</CardContainer>
+      <CardContainer theme={theme}>Learn TypesScript</CardContainer>
+      <CardContainer theme={theme}>Use static typing</CardContainer>
     </ColumnContainer>
   );
 };
