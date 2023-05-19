@@ -1,7 +1,7 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 
 type ThemeContextType = {
-  theme: "light" | "dark";
+  theme: string;
   toggleTheme: () => void;
 };
 
@@ -15,11 +15,22 @@ type Props = {
 };
 
 export const ThemeProvider = ({ children }: Props) => {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [theme, setTheme] = useState<string>(
+    localStorage.getItem("darkLightMode") || "light"
+  );
 
   const toggleTheme: ThemeContextType["toggleTheme"] = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+    setTheme((prevTheme) => {
+      const newTheme = prevTheme === "light" ? "dark" : "light";
+      localStorage.setItem("darkLightMode", newTheme);
+      return newTheme;
+    });
   };
+
+  useEffect(() => {
+    localStorage.setItem("darkLightMode", theme);
+  }, [theme]);
+
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
