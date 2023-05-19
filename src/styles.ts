@@ -155,7 +155,7 @@ export const ToggleButton = styled.button<AppContainerProps>`
   cursor: pointer;
   border: none;
   font-size: large;
-  position: absolute;
+  position: fixed;
   top: 10px;
   right: 10px;
   background: none;
@@ -168,6 +168,5 @@ export const ToggleButton = styled.button<AppContainerProps>`
   @media (max-width: 768px) {
     right: 10px;
     margin-bottom: 0px;
-    position: fixed;
   }
 `;
