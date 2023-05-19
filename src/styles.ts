@@ -88,7 +88,7 @@ export const TogglesButton = styled.div`
   @media (max-width: 768px) {
     display: flex;
     position: absolute;
-    top: 15px;
+    top: 18px;
     right: 50px;
     margin-bottom: 0px;
   }
@@ -156,7 +156,7 @@ export const ToggleButton = styled.button<AppContainerProps>`
   border: none;
   font-size: large;
   position: fixed;
-  top: 10px;
+  top: 15px;
   right: 10px;
   background: none;
 
