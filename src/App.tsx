@@ -13,6 +13,10 @@ export const App = () => {
       <NavBar />
       <AppContainer theme={theme}>
         <Column text="todo item list" />
+        <Column text="todo item list" />
+        <Column text="todo item list" />
+        <Column text="todo item list" />
+        <Column text="todo item list" />
         <ToggleButton onClick={toggleTheme} theme={theme}>
           {theme === "light" ? (
             <FiMoon className="icon" />

@@ -22,7 +22,7 @@ export const NavbarWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 20 auto;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -103,6 +103,7 @@ export const AppContainer = styled.div<AppContainerProps>`
   min-height: 100vh;
   padding: 20px;
   width: 100%;
+  margin-top: 50px;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -115,17 +116,18 @@ export const ColumnContainer = styled.div<AppContainerProps>`
     theme === "dark" ? "#2b2b2b" : "#eaeaea"};
   color: ${({ theme }) => (theme === "dark" ? "#fff" : "#333")};
   width: 300px;
+
   min-height: 40px;
   margin-right: 20px;
   border-radius: 5px;
   padding: 8px;
   flex-grow: 0;
-  margin-top: 70px;
+  margin-top: 10px;
 
   @media (max-width: 768px) {
     width: 100%;
     margin-right: 0;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
   }
 `;
 
@@ -166,5 +168,6 @@ export const ToggleButton = styled.button<AppContainerProps>`
   @media (max-width: 768px) {
     right: 10px;
     margin-bottom: 0px;
+    position: fixed;
   }
 `;
