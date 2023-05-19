@@ -7,6 +7,10 @@ export const NavbarContainer = styled.nav`
   background-color: #026aa7;
   color: #fff;
   padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 
   @media (max-width: 768px) {
     padding: 10px 5px;
@@ -116,6 +120,7 @@ export const ColumnContainer = styled.div<AppContainerProps>`
   border-radius: 5px;
   padding: 8px;
   flex-grow: 0;
+  margin-top: 70px;
 
   @media (max-width: 768px) {
     width: 100%;
