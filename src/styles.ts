@@ -104,7 +104,7 @@ export const AppContainer = styled.div<AppContainerProps>`
   min-height: 100vh;
   padding: 20px;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 20px;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -122,7 +122,7 @@ export const ColumnContainer = styled.div<AppContainerProps>`
   border-radius: 5px;
   padding: 8px;
   flex-grow: 0;
-  margin-top: 10px;
+  margin-top: 30px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
