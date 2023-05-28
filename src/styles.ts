@@ -205,6 +205,7 @@ export const NewItemContainer = styled.div`
   flex-direction: column;
   width: 100%;
   align-items: flex-start;
+  margin-top: 40px;
 
   @media (max-width: 768px) {
     max-width: 100%;
@@ -212,13 +213,14 @@ export const NewItemContainer = styled.div`
 `;
 
 export const NewItemButton = styled.div`
-  background-color: #363636;
-  border-radius: 5px;
+  background-color: rgb(2, 106, 167);
+  border-radius: 0px;
   border: none;
   box-shadow: none;
   color: #fff;
   padding: 6px 12px;
   text-align: center;
+  cursor: pointer;
 
   @media (max-width: 768px) {
     max-width: 100%;
@@ -226,12 +228,16 @@ export const NewItemButton = styled.div`
 `;
 
 export const NewItemInput = styled.input`
-  border-radius: 3px;
+  border-radius: 0px;
   border: none;
-  box-shadow: none;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 0px 0px;
+  font-size: 15px;
   margin-bottom: 0.5rem;
   padding: 0.5rem 1rem;
   width: 100%;
+  background-color: ${({ theme }) =>
+    theme === "dark" ? "#363636" : "#f0f0f0"};
+  color: ${({ theme }) => (theme === "dark" ? "#fff" : "#333")};
 
   @media (max-width: 768px) {
     max-width: 100%;
