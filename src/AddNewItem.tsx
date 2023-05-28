@@ -13,9 +13,8 @@ export const AddNewItem = ({ onAdd, toggleButtonText, dark }: Props) => {
   if (showForm) {
   }
   return (
-    <AddItemButton
-      dark={dark}
-      onClick={() => setShowForm(true)}
-    >{toggleButtonText}</AddItemButton>
+    <AddItemButton dark={dark} onClick={() => setShowForm(true)}>
+      {toggleButtonText}
+    </AddItemButton>
   );
 };
