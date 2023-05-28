@@ -3,6 +3,11 @@ import styled from "styled-components";
 type AppContainerProps = {
   theme: "light" | "dark";
 };
+
+type AddButtonProps = {
+  dark?: boolean;
+};
+
 export const NavbarContainer = styled.nav`
   background-color: #026aa7;
   color: #fff;
@@ -172,5 +177,24 @@ export const ToggleButton = styled.button<AppContainerProps>`
   @media (max-width: 768px) {
     right: 10px;
     margin-bottom: 0px;
+  }
+`;
+
+export const AddItemButton = styled.button<AddButtonProps>`
+  background-color: #363636;
+  border-radius: 5px;
+  border: none;
+  color: ${(props) => (props.dark ? "#363636" : "#f0f0f0")};
+  cursor: pointer;
+  max-width: 300px;
+  font-size: large;
+  padding: 10px 12px;
+  margin-top: 30px;
+  text-align: left;
+  transition: background 85ms ease-in;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
   }
 `;
