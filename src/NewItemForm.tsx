@@ -14,7 +14,7 @@ export const NewItemForm = ({ onAdd }: Props) => {
 
   const handleAddText = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
-      onAdd(text);
+      onAdd(input);
     }
   };
 
