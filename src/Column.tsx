@@ -14,7 +14,7 @@ export const Column = ({ text }: Props) => {
     <ColumnContainer theme={theme}>
       <ColumnTitle>{text}</ColumnTitle>
       <Card text="Generate scaffolding" theme={theme}/>
-      <AddNewItem onAdd={ () => console.log("good")} toggleButtonText="+ Add another card" dark/>
+      <AddNewItem onAdd={ () => console.log("good")} toggleButtonText="+ Add another card"/>
     </ColumnContainer>
   );
 };
