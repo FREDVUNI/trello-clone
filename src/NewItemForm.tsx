@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { NewItemButton, NewItemContainer, NewItemInput } from "./styles";
 import { ThemeContext } from "./context/ThemeToggle";
-import { UseFocus } from "./useFocus";
+import { UseFocus } from "./utils/UseFocus";
 
 type Props = {
   onAdd: (text: string) => void;
