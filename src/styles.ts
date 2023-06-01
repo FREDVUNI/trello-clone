@@ -243,3 +243,25 @@ export const NewItemInput = styled.input`
     max-width: 100%;
   }
 `;
+
+export const ScrollableContainer = styled.div`
+  height: 300px;
+  width: 300px;
+  overflow: auto;
+
+  ::-webkit-scrollbar {
+    width: 8px; /* width of the scrollbar */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #888; /* color of the thumb */
+    border-radius: 4px; /* roundness of the thumb */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+`;
+
+
