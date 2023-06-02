@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 type AppContainerProps = {
   theme: "light" | "dark";
@@ -244,7 +244,7 @@ export const NewItemInput = styled.input`
   }
 `;
 
-export const ScrollableContainer = styled.div`
+export const GlobalStyle = createGlobalStyle`
   height: 300px;
   width: 300px;
   overflow: auto;
@@ -263,5 +263,3 @@ export const ScrollableContainer = styled.div`
     border-radius: 4px;
   }
 `;
-
-

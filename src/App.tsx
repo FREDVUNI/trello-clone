@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Column } from "./Column";
 import { AddNewItem } from "./AddNewItem";
-import { AppContainer, ToggleButton } from "./styles";
+import { AppContainer, ToggleButton, GlobalStyle } from "./styles";
 import { ThemeContext } from "./context/ThemeToggle";
 import { FiSun, FiMoon } from "react-icons/fi";
 import NavBar from "./NavBar";
@@ -11,6 +11,7 @@ export const App = () => {
 
   return (
     <>
+      <GlobalStyle />
       <NavBar />
       <AppContainer theme={theme}>
         <Column text="todo item list" />
