@@ -250,12 +250,12 @@ export const ScrollableContainer = styled.div`
   overflow: auto;
 
   ::-webkit-scrollbar {
-    width: 8px; /* width of the scrollbar */
+    width: 8px; 
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #888; /* color of the thumb */
-    border-radius: 4px; /* roundness of the thumb */
+    background: #888;
+    border-radius: 4px;
   }
 
   ::-webkit-scrollbar-track {
