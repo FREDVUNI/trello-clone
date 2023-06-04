@@ -48,10 +48,12 @@ export const AppContext = createContext<contextProps>({} as contextProps);
 
 export const AppProvider = ({ children }: Node) => {
   const { lists } = initialState;
-  const getTaskById = (id:string) =>{
-    return lists.find((list) => list.id === id) ?.tasks || []
-  }
+  const getTaskById = (id: string) => {
+    return lists.find((list) => list.id === id)?.tasks || [];
+  };
   return (
-    <AppContext.Provider value={{ lists,getTaskById }}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{ lists, getTaskById }}>
+      {children}
+    </AppContext.Provider>
   );
 };
