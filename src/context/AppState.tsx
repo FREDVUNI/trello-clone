@@ -4,15 +4,15 @@ type Node = {
   children: React.ReactNode;
 };
 
-type Tasks = {
+type Task = {
   id: string;
   text: string;
 };
 
-type Lists = {
+type List = {
     id:string;
     text:string;
-    tasks:Tasks[]
+    tasks:Task[]
 }
 
 const initialState: any = [];
