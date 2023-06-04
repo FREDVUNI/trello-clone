@@ -10,15 +10,48 @@ type Task = {
 };
 
 type List = {
-    id:string;
-    text:string;
-    tasks:Task[]
-}
+  id: string;
+  text: string;
+  tasks: Task[];
+};
 
-const initialState: any = [];
+export type AppState = {
+  lists: List[];
+};
 
-export const AppContext = createContext(initialState);
+type contextProps = {
+  lists: List[];
+  getTaskById(id: string): Task[];
+};
+
+const initialState: AppState = {
+  lists: [
+    {
+      id: "0",
+      text: "To do",
+      tasks: [{ id: "c01", text: "Generate app scaffold" }],
+    },
+    {
+      id: "1",
+      text: "In Progress",
+      tasks: [{ id: "c02", text: "Learn TypeScript" }],
+    },
+    {
+      id: "2",
+      text: "Done",
+      tasks: [{ id: "c03", text: "Begin to use static typing" }],
+    },
+  ],
+};
+
+export const AppContext = createContext<contextProps>({} as contextProps);
 
 export const AppProvider = ({ children }: Node) => {
-  return <AppContext.Provider value={{}}>{children}</AppContext.Provider>;
+  const { lists } = initialState;
+  const getTaskById = (id:string) =>{
+    return lists.find((list) => list.id === id) ?.tasks || []
+  }
+  return (
+    <AppContext.Provider value={{ lists,getTaskById }}>{children}</AppContext.Provider>
+  );
 };
