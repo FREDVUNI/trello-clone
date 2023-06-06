@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React, { createContext, useState, useEffect } from "react";
 
 type Node = {
   children: React.ReactNode;
@@ -24,7 +24,7 @@ type contextProps = {
   getTaskById(id: string): Task[];
 };
 
-const initialState: AppState = {
+const initialState: AppState | React.ElementType = {
   lists: [
     {
       id: "0",
@@ -47,7 +47,23 @@ const initialState: AppState = {
 export const AppContext = createContext<contextProps>({} as contextProps);
 
 export const AppProvider = ({ children }: Node) => {
-  const { lists } = initialState;
+  const [lists, setLists] = useState<List[]>([]);
+
+  useEffect(() => {
+    const stored = localStorage.getItem("list");
+
+    if (stored) {
+      let data = JSON.parse(stored);
+      setLists(data.lists);
+    } else {
+      setLists(initialState.lists);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("list", JSON.stringify(initialState));
+  }, [lists]);
+
   const getTaskById = (id: string) => {
     return lists.find((list) => list.id === id)?.tasks || [];
   };
