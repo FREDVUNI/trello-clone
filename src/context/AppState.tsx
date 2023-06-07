@@ -22,6 +22,7 @@ export type AppState = {
 type contextProps = {
   lists: List[];
   getTaskById(id: string): Task[];
+  // createCard(id:string,text:string) : List
 };
 
 const initialState: AppState | React.ElementType = {
@@ -67,6 +68,15 @@ export const AppProvider = ({ children }: Node) => {
   const getTaskById = (id: string) => {
     return lists.find((list) => list.id === id)?.tasks || [];
   };
+
+  const createCard = (id: string, text: string) => {
+    // const new_card = lists.shift();
+  };
+
+  const createTask = (id: string, text: string) => {
+    // const new_task = lists.push();
+  };
+
   return (
     <AppContext.Provider value={{ lists, getTaskById }}>
       {children}
