@@ -22,10 +22,10 @@ export type AppState = {
 type contextProps = {
   lists: List[];
   getTaskById(id: string): Task[];
-  createCard(id: string, text: string): List[];
   deleteCard(id: string): List[];
-  createTask(id: string, text: string): Task[];
-  deleteTask(id: string): Task[];
+  // createCard(id: string, text: string): List[];
+  // createTask(id: string, text: string): Task[];
+  // deleteTask(id: string): Task[];
 };
 
 const initialState: AppState | React.ElementType = {
@@ -91,8 +91,9 @@ export const AppProvider = ({ children }: Node) => {
   };
   // deleteTask("1");
   const deleteCard = (id: string) => {
-    const card = lists.filter((list) => list.id !== id);
-    return setLists(card);
+    const cardList = lists.filter((list) => list.id !== id);
+    setLists(cardList);
+    return cardList;
   };
 
   return (
@@ -101,3 +102,24 @@ export const AppProvider = ({ children }: Node) => {
     </AppContext.Provider>
   );
 };
+
+// const createCard = (id: string, text: string) => {
+//   const newList = lists.map((list) => {
+//     if (list.id === id) {
+//       const newCard = {
+//         id: "c" + Math.random().toString().substr(2, 4),
+//         text: text,
+//       };
+//       return {
+//         ...list,
+//         tasks: [...list.tasks, newCard],
+//       };
+//     }
+//     return list;
+//   });
+
+//   setLists(newList);
+// };
+
+// // Example usage:
+// // createCard("0", "New Card");
