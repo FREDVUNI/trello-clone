@@ -28,7 +28,7 @@ type contextProps = {
   // deleteTask(id: string): Task[];
 };
 
-const initialState: AppState | React.ElementType = {
+const initialState: AppState  = {
   lists: [
     {
       id: "0",
@@ -123,3 +123,31 @@ export const AppProvider = ({ children }: Node) => {
 
 // // Example usage:
 // // createCard("0", "New Card");
+
+
+// const updateCard = (listId: string, cardId: string, newText: string) => {
+//   const updatedLists = lists.map((list) => {
+//     if (list.id === listId) {
+//       const updatedTasks = list.tasks.map((task) => {
+//         if (task.id === cardId) {
+//           return {
+//             ...task,
+//             text: newText,
+//           };
+//         }
+//         return task;
+//       });
+//       return {
+//         ...list,
+//         tasks: updatedTasks,
+//       };
+//     }
+//     return list;
+//   });
+
+//   setLists(updatedLists);
+// };
+
+// // Example usage:
+// // updateCard("0", "c01", "Updated Text");
+
