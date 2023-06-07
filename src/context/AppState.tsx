@@ -81,6 +81,10 @@ export const AppProvider = ({ children }: Node) => {
     const task = lists.find((list) => list.id === id)?.tasks;
   }
 
+  const deleteCard = (id:string) =>{
+    
+  }
+
   return (
     <AppContext.Provider value={{ lists, getTaskById }}>
       {children}
