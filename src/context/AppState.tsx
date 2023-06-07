@@ -74,8 +74,12 @@ export const AppProvider = ({ children }: Node) => {
   };
 
   const createTask = (id: string, text: string) => {
-    // const new_task = lists.push();
+    const task = lists.find((list) => list.id === id)?.tasks;
   };
+
+  const deleteTask = (id:string) =>{
+    const task = lists.find((list) => list.id === id)?.tasks;
+  }
 
   return (
     <AppContext.Provider value={{ lists, getTaskById }}>
