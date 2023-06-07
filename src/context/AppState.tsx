@@ -22,7 +22,10 @@ export type AppState = {
 type contextProps = {
   lists: List[];
   getTaskById(id: string): Task[];
-  // createCard(id:string,text:string) : List
+  createCard(id: string, text: string): List[];
+  deleteCard(id: string): List[];
+  createTask(id: string, text: string): Task[];
+  deleteTask(id: string): Task[];
 };
 
 const initialState: AppState | React.ElementType = {
@@ -77,16 +80,23 @@ export const AppProvider = ({ children }: Node) => {
     const task = lists.find((list) => list.id === id)?.tasks;
   };
 
-  const deleteTask = (id:string) =>{
-    const task = lists.find((list) => list.id === id)?.tasks;
-  }
-
-  const deleteCard = (id:string) =>{
-    
-  }
+  const deleteTask = (id: string) => {
+    // const task = lists.filter((list) => list.id !== id);
+    // const stored = localStorage.getItem("list");
+    // if(stored){
+    //   let data = JSON.parse(stored);
+    // }
+    // console.log(task);
+    // return setLists()
+  };
+  // deleteTask("1");
+  const deleteCard = (id: string) => {
+    const card = lists.filter((list) => list.id !== id);
+    return setLists(card);
+  };
 
   return (
-    <AppContext.Provider value={{ lists, getTaskById }}>
+    <AppContext.Provider value={{ lists, getTaskById, deleteCard }}>
       {children}
     </AppContext.Provider>
   );
