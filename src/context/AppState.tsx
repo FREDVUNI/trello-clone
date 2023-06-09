@@ -23,12 +23,12 @@ type contextProps = {
   lists: List[];
   getTaskById(id: string): Task[];
   deleteCard(id: string): List[];
-  // createCard(id: string, text: string): List[];
+  createCard(id: string, text: string): any;
   // createTask(id: string, text: string): Task[];
   // deleteTask(id: string): Task[];
 };
 
-const initialState: AppState  = {
+const initialState: AppState = {
   lists: [
     {
       id: "0",
@@ -73,7 +73,21 @@ export const AppProvider = ({ children }: Node) => {
   };
 
   const createCard = (id: string, text: string) => {
-    // const new_card = lists.shift();
+    const card_list = lists.map((list) => {
+      if (list.id === id) {
+        const newCard = {
+          id: "c" + Math.random().toString(),
+          text: text,
+        };
+
+        return {
+          ...list,
+          tasks: [...list.tasks, newCard],
+        };
+      }
+      return list;
+    });
+    setLists(card_list);
   };
 
   const createTask = (id: string, text: string) => {
@@ -97,7 +111,7 @@ export const AppProvider = ({ children }: Node) => {
   };
 
   return (
-    <AppContext.Provider value={{ lists, getTaskById, deleteCard }}>
+    <AppContext.Provider value={{ lists, getTaskById, deleteCard, createCard }}>
       {children}
     </AppContext.Provider>
   );
@@ -124,7 +138,6 @@ export const AppProvider = ({ children }: Node) => {
 // // Example usage:
 // // createCard("0", "New Card");
 
-
 // const updateCard = (listId: string, cardId: string, newText: string) => {
 //   const updatedLists = lists.map((list) => {
 //     if (list.id === listId) {
@@ -150,4 +163,3 @@ export const AppProvider = ({ children }: Node) => {
 
 // // Example usage:
 // // updateCard("0", "c01", "Updated Text");
-
