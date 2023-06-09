@@ -24,7 +24,7 @@ type contextProps = {
   getTaskById(id: string): Task[];
   deleteCard(id: string): List[];
   createCard(id: string, text: string): any;
-  // createTask(id: string, text: string): Task[];
+  createTask(id: string, text: string): any;
   // deleteTask(id: string): Task[];
 };
 
@@ -76,7 +76,7 @@ export const AppProvider = ({ children }: Node) => {
     const card_list = lists.map((list) => {
       if (list.id === id) {
         const newCard = {
-          id: "c" + Math.random().toString(),
+          id: Math.random().toString(),
           text: text,
         };
 
@@ -90,8 +90,22 @@ export const AppProvider = ({ children }: Node) => {
     setLists(card_list);
   };
 
-  const createTask = (id: string, text: string) => {
-    const task = lists.find((list) => list.id === id)?.tasks;
+  const createTask = (text: string) => {
+    const task_list = lists.map((list) => {
+      if (list.tasks) {
+        const newTask = {
+          id: "c" + Math.random().toString(),
+          text: text,
+        };
+
+        return {
+          ...list,
+          tasks: [...list.tasks, newTask],
+        };
+      }
+      return list;
+    });
+    setLists(task_list);
   };
 
   const deleteTask = (id: string) => {
@@ -103,7 +117,7 @@ export const AppProvider = ({ children }: Node) => {
     // console.log(task);
     // return setLists()
   };
-  // deleteTask("1");
+  
   const deleteCard = (id: string) => {
     const cardList = lists.filter((list) => list.id !== id);
     setLists(cardList);
@@ -111,7 +125,7 @@ export const AppProvider = ({ children }: Node) => {
   };
 
   return (
-    <AppContext.Provider value={{ lists, getTaskById, deleteCard, createCard }}>
+    <AppContext.Provider value={{ lists, getTaskById, deleteCard, createCard, createTask }}>
       {children}
     </AppContext.Provider>
   );
