@@ -131,27 +131,6 @@ export const AppProvider = ({ children }: Node) => {
   );
 };
 
-// const createCard = (id: string, text: string) => {
-//   const newList = lists.map((list) => {
-//     if (list.id === id) {
-//       const newCard = {
-//         id: "c" + Math.random().toString().substr(2, 4),
-//         text: text,
-//       };
-//       return {
-//         ...list,
-//         tasks: [...list.tasks, newCard],
-//       };
-//     }
-//     return list;
-//   });
-
-//   setLists(newList);
-// };
-
-// // Example usage:
-// // createCard("0", "New Card");
-
 // const updateCard = (listId: string, cardId: string, newText: string) => {
 //   const updatedLists = lists.map((list) => {
 //     if (list.id === listId) {
