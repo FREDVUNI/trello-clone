@@ -50,6 +50,11 @@ The application should now be running on [http://localhost:3000](http://localhos
 - Drag and drop cards between lists to reorder them or move them to different lists.
 - Toggle between dark and light theme using the theme toggle button.
 
+## Screenshot
+
+![image](https://github.com/FREDVUNI/trello-clone/assets/41730664/68b48500-56a9-42ee-bfe4-45613d77c36b)
+
+
 ## Contributing
 
 Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or submit a pull request.
